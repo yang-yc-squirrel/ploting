@@ -2,6 +2,8 @@ def repolish(s):
     numlist=list(range(0,10,1))
     symlist=[chr(ord("a")+i) for i in range(26)]+[chr(ord("A")+j) for j in range(26)]
     opelist=["+","-","*","/","(",")"]
+    prioritylist=[0,0,1,1,2,2]
+    opedict=dict(zip(opelist,prioritylist))
     stack1=[]
     stack2=[]
     li=list(s)
@@ -13,13 +15,38 @@ def repolish(s):
                 if(len(stack1)==0):
                     stack1.append(k)
                 else:
-                    finalope=stack1[len(stack1)-1]
-                    
+                    if(k=="("):
+                        stack1.append(k)
+                    else:
+                        if(k==")"):
+                            while(True):
+                                finalope = stack1[len(stack1) - 1]
+                                if(finalope=="("):
+                                    break
+                                stack2.append(finalope)
+                                stack1.pop()
+                        else:
+                            finalope = stack1[len(stack1) - 1]
+                            if(opedict.get(k)>opedict.get(finalope)):
+                                stack1.append(k)
+                            else:
+                                while(True):
+                                    finalope = stack1[len(stack1) - 1]
+                                    stack2.append(finalope)
+                                    stack1.pop()
+                                    finalope = stack1[len(stack1) - 1]
+                                    if(opedict.get(k)>opedict.get(finalope) or len(stack1)==0):
+                                        stack1.append(k)
+                                        break
 
+    stack1.reverse()
+    stack2.extend(stack1)
+    res=[]
+    while(len(stack2)!=0):
+        res.append(stack2.pop())
 
-
-    return li
+    return res
 
 s=input("please input an expression:")
-li=repolish(s)
-print(li)
+res=repolish(s)
+print(res)
