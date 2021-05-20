@@ -34,8 +34,8 @@ def repolish(s):
                                     finalope = stack1[len(stack1) - 1]
                                     stack2.append(finalope)
                                     stack1.pop()
-                                    finalope = stack1[len(stack1) - 1]
-                                    if(opedict.get(k)>opedict.get(finalope) or len(stack1)==0):
+                                    finalope = stack1[len(stack1) - 1] if len(stack1)>=1 else -1
+                                    if(opedict.get(k)>opedict.get(finalope)):
                                         stack1.append(k)
                                         break
 
