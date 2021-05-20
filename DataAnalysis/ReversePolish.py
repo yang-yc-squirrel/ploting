@@ -1,5 +1,5 @@
 def repolish(s):
-    numlist=list(range(0,10,1))
+    numlist=[str(i) for i in range(0,10,1)]
     symlist=[chr(ord("a")+i) for i in range(26)]+[chr(ord("A")+j) for j in range(26)]
     opelist=["+","-","*","/","(",")"]
     prioritylist=[0,0,1,1,2,2]
@@ -44,7 +44,7 @@ def repolish(s):
     res=[]
     while(len(stack2)!=0):
         res.append(stack2.pop())
-
+    res="".join(res)
     return res
 
 s=input("please input an expression:")
