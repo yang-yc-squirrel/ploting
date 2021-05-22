@@ -24,6 +24,6 @@ def subseq(s):
 
 subnums,res=subseq("abcde")
 print("The number of subsequences is: {0}".format(subnums))
-print("List subsequences: {ls}".format(ls=res))
+print("List subsequences: {liseq}".format(liseq=res))
 
 
