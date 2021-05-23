@@ -1,3 +1,4 @@
-def value_save():
-
-def knapsack_plan(val_l,wei_l,k,T):
+import numpy
+def knapsack_plan(val_li,wei_li,nums,volume):
+    ans=numpy.zeros(shape=(nums,volume))
+    
