@@ -8,5 +8,5 @@ def knapsack_init(val_li,wei_li,nums,volume):
 def knapsack_plan(val_li,wei_li,i,j,ans):
     if(ans[i,j]!=-1):
         return ans[i,j]
-    
+
 
