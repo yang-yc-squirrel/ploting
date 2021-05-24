@@ -17,10 +17,10 @@ def fingdcircle(adjmat):
                 visited[x[k-1]]=0
                 x[k]=0
                 k-=1
-                
+        k+=1
+    return visited
 
 
-
-g=numpy.zeros(shape=(1,10)).flatten()
-print(g)
-print(g[5])
+n=6
+adjmat=numpy.zeros(shape=(n,n))
+print(adjmat)
