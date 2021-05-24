@@ -6,9 +6,19 @@ def fingdcircle(adjmat):
     k=0
     x[k]=0
     visited[x[k]]=1
-    for k in range(1,n,1):
-        x[k]=x[k]+1
-        if()
+    while(k<n):
+        while(True):
+            x[k] = x[k] + 1
+            if (visited[x[k]]==0 and adjmat[x[k],x[k-1]]==1):
+                visited[x[k]]=1
+                break
+            if(x[k]>=n):
+                visited[x[k]]=0
+                visited[x[k-1]]=0
+                x[k]=0
+                k-=1
+                
+
 
 
 g=numpy.zeros(shape=(1,10)).flatten()
