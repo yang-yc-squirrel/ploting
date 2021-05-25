@@ -12,10 +12,10 @@ def fingdcircle(adjmat):
         while(True):
             x[k] = x[k] + 1
             if (x[k] >= n):
-                visited[x[k]] = 0
                 visited[x[k - 1]] = 0
                 x[k] = 0
                 k -= 1
+                continue
             if (visited[x[k]]==0 and adjmat[x[k],x[k-1]]==1):
                 visited[x[k]]=1
                 break
