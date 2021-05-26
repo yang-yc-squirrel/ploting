@@ -23,7 +23,7 @@ class Grade:
 
 if(__name__=="__main__"):
     try:
-        g1 = Grade("xiaoming", 87,70, 80)
+        g1 = Grade("xiaoming", 95,70, 80)
         print(g1)
         g1()
     except IOError as ioe:
