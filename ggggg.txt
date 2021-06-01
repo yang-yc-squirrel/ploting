@@ -1,1 +1,7 @@
 test
+about connection
+this project is built up
+for data analysis
+as well as
+image processing
+and image rendering
