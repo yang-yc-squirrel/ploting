@@ -24,7 +24,7 @@ def initpos(n):
 
 solnums=0
 solindex=[]
-n=4
+n=8
 pos=initpos(n)
 k=1
 flag=0
@@ -46,6 +46,8 @@ while(True):
                 k -= 1
                 if (operator.eq(k, 0)):
                     pos[0] += 1
+                    if(operator.ge(pos[0],n)):
+                        break
                     k = 1
                 else:
                     pos[k] += 1
@@ -53,16 +55,14 @@ while(True):
             break
 
     k=k+1
+    if (operator.ge(pos[0], n)):
+        flag = 1
 
     if(operator.ge(k,n)):
         solnums+=1
         solindex.append(pos.copy())
-        for i in range(1,n,1):
-            pos[i]=0
-        pos[0]+=1
-        k=1
-        if(operator.ge(pos[0],n)):
-            flag=1
+        k-=1
+        pos[k]+=1
     if(operator.eq(flag,1)):
         flag=0
         break
