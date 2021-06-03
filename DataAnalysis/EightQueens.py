@@ -20,23 +20,35 @@ def initpos(n):
     return pos
 
 
-a=[0,2]
-print(conflict(a))
 
-'''solnums=0
+
+solnums=0
 solindex=[]
-n=8
+n=4
 pos=initpos(n)
 k=1
+flag=0
 while(True):
     while(True):
         print(k)
+        if(operator.ge(pos[k],n)):
+            pos[k]=0
+            k-=1
+            if(operator.eq(k,0)):
+                pos[0]+=1
+                k=1
+            else:
+                pos[k] += 1
         if (conflict(pos[0:k + 1:1])):
             pos[k] += 1
             if (operator.ge(pos[k], n)):
                 pos[k] = 0
                 k -= 1
-                pos[k] += 1
+                if (operator.eq(k, 0)):
+                    pos[0] += 1
+                    k = 1
+                else:
+                    pos[k] += 1
         else:
             break
 
@@ -44,14 +56,17 @@ while(True):
 
     if(operator.ge(k,n)):
         solnums+=1
-        solindex.append(pos)
+        solindex.append(pos.copy())
         for i in range(1,n,1):
             pos[i]=0
         pos[0]+=1
         k=1
         if(operator.ge(pos[0],n)):
-            break
+            flag=1
+    if(operator.eq(flag,1)):
+        flag=0
+        break
 
-
+print("end".center(20,"*"))
 print(solnums)
-print(solindex)'''
+print(solindex)
