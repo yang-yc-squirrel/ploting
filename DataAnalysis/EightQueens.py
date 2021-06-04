@@ -1,6 +1,8 @@
 import operator
-def conflict(pos):
+import numpy
+import matplotlib.pyplot
 
+def conflict(pos):
     res=False
     flag=0
     for i in range(0,len(pos)-1,1):
@@ -30,7 +32,7 @@ k=1
 flag=0
 while(True):
     while(True):
-        print(k)
+
         if(operator.ge(pos[k],n)):
             pos[k]=0
             k-=1
@@ -67,6 +69,18 @@ while(True):
         flag=0
         break
 
-print("end".center(20,"*"))
-print(solnums)
-print(solindex)
+print("when the number of pieces is {s1} the number of solutions is {s2}".format(s1=n,s2=solnums))
+
+f=matplotlib.pyplot.figure()
+matplotlib.pyplot.axis([-1,n+1,-1,n+1])
+matplotlib.pyplot.axis("off")
+
+for i in range(n+1):
+    x1=numpy.ones(shape=(1,500)).flatten()*i
+    y1=numpy.linspace(0,n,500)
+    matplotlib.pyplot.plot(x1,y1,color=(1,0,0))
+    x2=numpy.linspace(0,n,500)
+    y2=numpy.ones(shape=(1,500)).flatten()*i
+    matplotlib.pyplot.plot(x2,y2,color=(1,0,0))
+
+matplotlib.pyplot.show()
