@@ -83,4 +83,9 @@ for i in range(n+1):
     y2=numpy.ones(shape=(1,500)).flatten()*i
     matplotlib.pyplot.plot(x2,y2,color=(1,0,0))
 
+qy=numpy.array([i+0.5 for i in range(n)])
+qx=numpy.array(solindex[0])+0.5
+matplotlib.pyplot.scatter(qx,qy,color=(0,0,1),s=25,alpha=0.6)
+
+
 matplotlib.pyplot.show()
