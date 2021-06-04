@@ -75,17 +75,25 @@ f=matplotlib.pyplot.figure()
 matplotlib.pyplot.axis([-1,n+1,-1,n+1])
 matplotlib.pyplot.axis("off")
 
-for i in range(n+1):
-    x1=numpy.ones(shape=(1,500)).flatten()*i
-    y1=numpy.linspace(0,n,500)
-    matplotlib.pyplot.plot(x1,y1,color=(1,0,0))
-    x2=numpy.linspace(0,n,500)
-    y2=numpy.ones(shape=(1,500)).flatten()*i
-    matplotlib.pyplot.plot(x2,y2,color=(1,0,0))
+counts=0
+while(True):
+    matplotlib.pyplot.cla()
+    for i in range(n + 1):
+        x1 = numpy.ones(shape=(1, 500)).flatten() * i
+        y1 = numpy.linspace(0, n, 500)
+        matplotlib.pyplot.plot(x1, y1, color=(1, 0, 0))
+        x2 = numpy.linspace(0, n, 500)
+        y2 = numpy.ones(shape=(1, 500)).flatten() * i
+        matplotlib.pyplot.plot(x2, y2, color=(1, 0, 0))
+        matplotlib.pyplot.axis("off")
 
-qy=numpy.array([i+0.5 for i in range(n)])
-qx=numpy.array(solindex[0])+0.5
-matplotlib.pyplot.scatter(qx,qy,color=(0,0,1),s=25,alpha=0.6)
+    qy = numpy.array([i + 0.5 for i in range(n)])
+    qx = numpy.array(solindex[counts]) + 0.5
+    matplotlib.pyplot.scatter(qx, qy, color=(0, 0, 1), s=25, alpha=0.6)
+    counts+=1
+    matplotlib.pyplot.pause(0.5)
+    if(operator.ge(counts,solnums)):
+        counts=0
+        break
 
 
-matplotlib.pyplot.show()
