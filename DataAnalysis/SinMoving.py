@@ -5,12 +5,19 @@ import matplotlib.animation
 
 
 f=matplotlib.pyplot.figure()
-x=numpy.random.randint(1,9,size=(3,50)).flatten()
-y=numpy.random.randint(1,9,size=(50,3)).flatten()
-matplotlib.pyplot.axis([0,10,0,10])
-for i in range(len(x)):
-    sizes=random.randint(10,30)
-    matplotlib.pyplot.scatter(x[i],y[i],s=sizes,color="#ff0000",alpha=0.3)
+ax=matplotlib.pyplot.axes(xlim=(0,2*numpy.pi),ylim=(-1.5,1.5))
+b,=ax.plot([],[])
+x=[]
+y=[]
+def init():
+    b.set_data(x,y)
+    return b,
 
-matplotlib.pyplot.annotate("scatter",xy=(5,5),xytext=(7,5),arrowprops={"facecolor":"blue","shrink":0.08})
+def newf(i):
+    x.append(i)
+    y.append(numpy.sin(i))
+    b.set_data(x,y)
+    return b,
+
+m=matplotlib.animation.FuncAnimation(f,newf,frames=numpy.linspace(0,2*numpy.pi,100),init_func=init,interval=3,blit=True)
 matplotlib.pyplot.show()
