@@ -17,10 +17,15 @@ def testfunc(x):
 f=matplotlib.pyplot.figure()
 p=mpl_toolkits.mplot3d.Axes3D(f)
 
-xdata=numpy.linspace(-600,600,5000)
-ydata=numpy.linspace(-600,600,5000)
+xdata=numpy.linspace(-60,60,500)
+ydata=numpy.linspace(-60,60,500)
 x,y=numpy.meshgrid(xdata,ydata)
 
-z=x+y
-p.plot_surface(x,y,z)
+z=numpy.zeros(shape=(500,500))
+for i in range(500):
+    for j in range(500):
+        vec=numpy.array([x[i,j],y[i,j]])
+        z[i,j]=testfunc(vec)
+
+p.plot_surface(x,y,z,cmap=matplotlib.pyplot.get_cmap("winter"))
 matplotlib.pyplot.show()
