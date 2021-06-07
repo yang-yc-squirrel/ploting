@@ -1,6 +1,18 @@
 import numpy
+import random
 import matplotlib.pyplot
 import mpl_toolkits.mplot3d
+
+def initpso(nums,dims,ub,lb):
+    X=numpy.zeros(shape=(nums,dims))
+    for i in range(nums):
+        for j in range(dims):
+            X[i,j]=random.random()*(ub[j]-lb[j])+lb[j]
+    return X
+
+
+
+
 
 def testfunc(x):
     n=len(x)
