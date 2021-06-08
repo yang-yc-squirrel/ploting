@@ -10,7 +10,16 @@ def initpso(nums,dims,ub,lb):
             X[i,j]=random.random()*(ub[j]-lb[j])+lb[j]
     return X
 
-
+def overborder(X,ub,lb):
+    nums=X.shape[0]
+    dims=X.shape[1]
+    for i in range(nums):
+        for j in range(dims):
+            if(X[i,j]>ub[j]):
+                X[i,j]=ub[j]
+            if(X[i,j]<lb[j]):
+                X[i,j]=lb[j]
+    return X
 
 
 
