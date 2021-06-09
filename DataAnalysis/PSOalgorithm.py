@@ -21,7 +21,9 @@ def overborder(X,ub,lb):
                 X[i,j]=lb[j]
     return X
 
-
+def pso(nums,dims,ub,lb,T,func):
+    X=initpso(nums,dims,ub,lb)
+    V=numpy.zeros(shape=(nums,dims))
 
 def testfunc(x):
     n=len(x)
