@@ -24,6 +24,14 @@ def overborder(X,ub,lb):
 def pso(nums,dims,ub,lb,T,func):
     X=initpso(nums,dims,ub,lb)
     V=numpy.zeros(shape=(nums,dims))
+    gpos=X[0,:]
+    gvalue=func(gpos)
+    for i in range(1,nums,1):
+        if(func(X[i,:])<gvalue):
+            gpos=X[i,:]
+            gvalue=func(gpos)
+    
+    return gpos
 
 def testfunc(x):
     n=len(x)
