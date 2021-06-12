@@ -30,7 +30,8 @@ def pso(nums,dims,ub,lb,T,func):
         if(func(X[i,:])<gvalue):
             gpos=X[i,:]
             gvalue=func(gpos)
-    
+    ppos=numpy.zeros(shape=(nums,dims))
+
     return gpos
 
 def testfunc(x):
