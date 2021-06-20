@@ -16,3 +16,6 @@ print(k)
 
 p1=pandas.DataFrame(a,columns=list("abcdef"))
 print(p1)
+
+ps=pandas.concat([p,p1],axis=0,join="outer")
+print(ps)
