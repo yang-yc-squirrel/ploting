@@ -5,7 +5,16 @@ import random
 import functools
 import itertools
 
-a=[random.randint(0,10) for i in range(10)]
-print(a)
-for i in itertools.dropwhile(lambda x:x>3,a):
-    print(i)
+def inputstr():
+    while(True):
+        s = input("please input s:")
+        if (s=="ab" or s=="ac"):
+            break
+        else:
+            print("error")
+
+    print("end")
+    return s
+
+s=inputstr()
+print(s)
