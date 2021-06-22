@@ -14,3 +14,6 @@ d=dict(a=a,b=b,c=c)
 p="F:/test.json"
 with open(p,"w") as f:
     json.dump(d,f)
+
+jud=os.path.exists(p)
+print(jud)
