@@ -7,13 +7,11 @@ import itertools
 import json
 import os
 
-a="suv"
-b=[random.randint(3,10) for i in range(6)]
-c=[chr(ord("a")+i) for i in range(8)]
-d=dict(a=a,b=b,c=c)
-p="F:/test.json"
-with open(p,"w") as f:
-    json.dump(d,f)
-
-jud=os.path.exists(p)
-print(jud)
+a=numpy.random.randint(0,10,size=(1,15)).flatten()
+print(a)
+b=numpy.argsort(a)
+print(b)
+b1=list(b)
+print(b1)
+b2=numpy.array(b1)
+print(b2)
