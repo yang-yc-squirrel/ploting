@@ -7,11 +7,10 @@ import itertools
 import json
 import os
 
-a=numpy.random.randint(0,10,size=(1,15)).flatten()
+a=numpy.random.randint(0,10,size=(5,3))
 print(a)
-b=numpy.argsort(a)
-print(b)
-b1=list(b)
-print(b1)
-b2=numpy.array(b1)
-print(b2)
+print(a.sum(axis=0))
+p=pandas.DataFrame(a,columns=list("abc"),index=list(range(5,10,1)))
+print(p)
+p=p.sort_values(axis=0,by="b")
+print(p)
