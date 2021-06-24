@@ -7,10 +7,7 @@ import itertools
 import json
 import os
 
-a=numpy.random.randint(0,10,size=(5,3))
+a=numpy.array([random.choice(list(range(3))) for i in range(15)])
 print(a)
-print(a.sum(axis=0))
-p=pandas.DataFrame(a,columns=list("abc"),index=list(range(5,10,1)))
-print(p)
-p=p.sort_values(axis=0,by="b")
-print(p)
+b=list(range(10))
+print(b)
