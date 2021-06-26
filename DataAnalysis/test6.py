@@ -7,6 +7,7 @@ import itertools
 import json
 import os
 import collections
+import docx
 
 b=random.sample(list(range(10,1,-1)),5)
 a=numpy.array([random.choice(list(range(3))) for i in range(20)])
@@ -22,3 +23,9 @@ ras=format(ras,"0.5%")
 print("{0:->20}".format("new"))
 print(ras)
 print(type(ras))
+
+
+path="F:/abc.docx"
+f1=docx.Document()
+f1.add_paragraph("the answer is:"+ras)
+f1.save(path)
