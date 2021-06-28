@@ -18,3 +18,6 @@ print(nz)
 ra=nz/len(a)
 ra=format(ra,"0.6%")
 print(ra)
+
+for i in itertools.dropwhile(lambda x:x==1 or x==2,a):
+    print(i,end=" ")
