@@ -21,3 +21,14 @@ print(ra)
 
 for i in itertools.dropwhile(lambda x:x==1 or x==2,a):
     print(i,end=" ")
+
+g=list(range(10))
+print("\n")
+print(g)
+
+def sq(x):
+    res=x**2-3*x
+    return res
+
+s1=list(map(sq,g))
+print(s1)
