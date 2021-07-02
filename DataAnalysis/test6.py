@@ -8,27 +8,18 @@ import json
 import os
 import collections
 import docx
+import heapq
 
-a=numpy.array([random.choice(list(range(3))) for i in range(20)])
+a=collections.deque(maxlen=10)
+for i in range(20):
+    a.appendleft(i)
 print(a)
-d=dict(collections.Counter(a))
-print(d)
-nz=len(a)-d.get(0)
-print(nz)
-ra=nz/len(a)
-ra=format(ra,"0.6%")
-print(ra)
 
-for i in itertools.dropwhile(lambda x:x==1 or x==2,a):
-    print(i,end=" ")
+b=[random.randint(0,20) for i in range(10)]
+print(b)
 
-g=list(range(10))
-print("\n")
-print(g)
-
-def sq(x):
-    res=x**2-3*x
-    return res
-
-s1=list(map(sq,g))
-print(s1)
+heapq.heapify(b)
+print(b)
+c=heapq.heapreplace(b,100)
+print(c)
+print(b)
