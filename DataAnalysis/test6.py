@@ -23,3 +23,6 @@ print(b)
 c=heapq.heapreplace(b,100)
 print(c)
 print(b)
+
+heapq.heappush(b,1)
+print(b)
