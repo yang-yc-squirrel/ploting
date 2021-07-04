@@ -11,4 +11,11 @@ import docx
 import heapq
 
 n=eval(input("please inputy a number:"))
-print("{0} {1}".format(n,type(n)))
+di=[9]
+i=1
+while(i<=10):
+    di=di*i
+    dis=[str(j) for j in di]
+    divs="".join(dis)
+    div=eval(divs)
+    i+=1
