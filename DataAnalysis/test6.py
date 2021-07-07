@@ -25,3 +25,9 @@ z=dict(zip([chr(ord("a")+i) for i in range(5,10,1)],[random.randint(100,200) for
 d=d.append([z],ignore_index=True)
 print(d)
 
+g=numpy.random.randint(20,30,size=(6,3))
+print(g)
+h=pandas.DataFrame(g,columns=list("fhj"))
+print(h)
+k=pandas.concat([d,h],axis=0,join="outer")
+print(k)
