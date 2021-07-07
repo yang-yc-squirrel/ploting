@@ -11,10 +11,10 @@ import docx
 import turtle
 import heapq
 
-a=numpy.array([random.choice(list(range(50))) for i in range(30)])
-a=a.reshape(5,6)
+
+a=list(range(20))
 print(a)
-p=pandas.DataFrame(a)
-print(p)
-p=p.set_index([1],drop=True)
-print(p)
+a_new=list(map(lambda x:2*x-25,a))
+print(a_new)
+s=numpy.array([random.choice(a_new) for _ in range(45)]).reshape(-1,5)
+print(s)
