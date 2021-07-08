@@ -45,3 +45,9 @@ print(p)
 print("{0:*<30}".format("next"))
 p=p.set_index(["b"],drop=True)
 print(p)
+
+tx=list(p.iloc[:,0])
+print(tx)
+print("\n")
+for i,j in enumerate(tx,5):
+    print("{i} {j}".format(i=i,j=j))
