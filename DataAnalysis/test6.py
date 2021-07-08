@@ -51,3 +51,6 @@ print(tx)
 print("\n")
 for i,j in enumerate(tx,5):
     print("{i} {j}".format(i=i,j=j))
+
+for k in itertools.dropwhile(lambda x:x<200,tx):
+    print(k)
