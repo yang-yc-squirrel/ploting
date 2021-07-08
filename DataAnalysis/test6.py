@@ -33,4 +33,15 @@ while(True):
         break
 print(r)
 
-
+r=numpy.array(r).reshape(-1,3)
+print(r)
+jk=r.sum(axis=0).reshape(-1,3)
+print(jk)
+r=numpy.r_[r,jk]
+print(format("sum","+>30"))
+print(r)
+p=pandas.DataFrame(r,columns=[chr(ord("a")+i) for i in range(3)])
+print(p)
+print("{0:*<30}".format("next"))
+p=p.set_index(["b"],drop=True)
+print(p)
