@@ -54,3 +54,10 @@ for i,j in enumerate(tx,5):
 
 for k in itertools.dropwhile(lambda x:x<200,tx):
     print(k)
+
+print("\n")
+print("{0:+^50}".format("test"))
+yu=numpy.linspace(0,1,300)
+print(yu)
+l=len(yu)
+print(l)
