@@ -27,3 +27,14 @@ b.append(100)
 print(b)
 df=dict(itertools.zip_longest(b,a,fillvalue="k"))
 print(df)
+
+
+print("{0:-^50}".format("next"))
+t=numpy.random.randint(5,20,size=(2,6)).flatten()
+print(t)
+t=list(t)
+t=sorted(t,reverse=True)
+print(t)
+
+df=sorted(df.items(),key=lambda x:x[0])
+print(df)
