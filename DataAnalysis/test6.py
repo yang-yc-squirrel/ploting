@@ -38,3 +38,6 @@ print(t)
 
 df=sorted(df.items(),key=lambda x:x[0])
 print(df)
+
+dft=dict(df)
+print(dft.get(2,"error"))
