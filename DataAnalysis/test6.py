@@ -10,34 +10,27 @@ import collections
 import docx
 import turtle
 import heapq
+import re
 
+a=numpy.random.randint(5,20,size=(5,3)).flatten()
 
-p=numpy.linspace(0,10,24)
-print(p)
-p=p.reshape(8,-1)
-print(p)
-o=pandas.DataFrame(p,columns=list("abc"),index=[random.choice([chr(ord("a")+i) for i in range(26)]) for _ in range(8)])
-print(o)
+for x,y in enumerate(a,5):
+    di = dict(xx=x, yy=y)
+    print("{xx}-{yy}".format(**di))
 
-a=list(o.iloc[:,0])
-print(a)
-b=[random.randint(0,20) for i in range(len(a))]
-print(b)
-b.append(100)
-print(b)
-df=dict(itertools.zip_longest(b,a,fillvalue="k"))
-print(df)
+h=numpy.argsort(a)
+print(h)
 
-
-print("{0:-^50}".format("next"))
-t=numpy.random.randint(5,20,size=(2,6)).flatten()
-print(t)
-t=list(t)
-t=sorted(t,reverse=True)
+s=[chr(ord("a")+random.randint(0,25)) for i in range(30)]
+print(s)
+s="a".join(s)+"ddd"
+print(s)
+s=s.replace("a","k",3)
+print(s)
+t=re.split(r"[a]",s)
 print(t)
 
-df=sorted(df.items(),key=lambda x:x[0])
-print(df)
-
-dft=dict(df)
-print(dft.get(2,"error"))
+u=[random.choice(list(range(3))) for _ in range(15)]
+print(u)
+un=[-1 if i==0 else i for i in u]
+print(un)
