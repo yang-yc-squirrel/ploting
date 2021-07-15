@@ -34,3 +34,11 @@ u=[random.choice(list(range(3))) for _ in range(15)]
 print(u)
 un=[-1 if i==0 else i for i in u]
 print(un)
+
+sr=[chr(ord(random.choice(["a","0"]))+random.randint(0,25)) for _ in range(30)]
+print(sr)
+ssr="".join(sr)
+print(ssr)
+me=re.compile("\d+")
+tsr=re.sub(me,"%%",ssr)
+print(tsr)
