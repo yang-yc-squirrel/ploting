@@ -42,3 +42,17 @@ print(ssr)
 me=re.compile("\d+")
 tsr=re.sub(me,"%%",ssr)
 print(tsr)
+
+
+print("sss".ljust(50,"-"))
+
+df=[chr(ord("a")+random.choice(list(range(25)))) for _ in range(25)]
+print(df)
+sf=""
+for i in df:
+    sf=sf+chr(ord("a")+random.randint(0,25))+i
+print(sf)
+print(len(sf))
+nh=re.compile("[a-f]+")
+op=re.findall(nh,sf)
+print(op)
