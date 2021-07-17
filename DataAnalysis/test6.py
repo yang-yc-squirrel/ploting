@@ -11,6 +11,7 @@ import docx
 import turtle
 import heapq
 import re
+from PIL import Image
 
 a=numpy.random.randint(5,20,size=(5,3)).flatten()
 
@@ -56,3 +57,24 @@ print(len(sf))
 nh=re.compile("[a-f]+")
 op=re.findall(nh,sf)
 print(op)
+
+
+p="F:/data"
+print(os.getcwd())
+st=os.listdir(p)
+print(st)
+k="yyytttrrr"
+kk=k.rstrip("r")
+print(kk)
+for i in st:
+    hou=i.split(".").pop()
+    if(hou=="png"):
+        ps=p+"/"+i
+        break
+else:
+     ps="none"
+print(ps)
+
+F=Image.open(ps)
+F1=F.convert("L")
+F1.save(p+"/"+"new.png")
