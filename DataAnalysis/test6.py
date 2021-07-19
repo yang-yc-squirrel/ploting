@@ -59,22 +59,9 @@ op=re.findall(nh,sf)
 print(op)
 
 
-p="F:/data"
-print(os.getcwd())
-st=os.listdir(p)
-print(st)
-k="yyytttrrr"
-kk=k.rstrip("r")
-print(kk)
-for i in st:
-    hou=i.split(".").pop()
-    if(hou=="png"):
-        ps=p+"/"+i
-        break
-else:
-     ps="none"
-print(ps)
-
-F=Image.open(ps)
-F1=F.convert("L")
-F1.save(p+"/"+"new.png")
+a=numpy.array([random.choice(list(range(100))) for _ in range(75)]).reshape(-1,3)
+print(a)
+pa=pandas.DataFrame(a,columns=list("abc"))
+print(pa)
+pa1=pa.sample(n=10,replace=True)
+print(pa1)
