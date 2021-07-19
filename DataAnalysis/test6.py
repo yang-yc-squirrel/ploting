@@ -65,3 +65,10 @@ pa=pandas.DataFrame(a,columns=list("abc"))
 print(pa)
 pa1=pa.sample(n=10,replace=True)
 print(pa1)
+
+pa2=pa.sample(frac=0.1)
+print(pa2)
+
+rates=5
+pa3=pa[::rates]
+print(pa3)
