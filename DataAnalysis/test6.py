@@ -72,3 +72,20 @@ print(pa2)
 rates=5
 pa3=pa[::rates]
 print(pa3)
+
+
+aaa=[random.choice(list(range(5))) for _ in range(6)]
+print(aaa)
+gh=[]
+for x,y in enumerate(aaa,9):
+    gh.append((x,y))
+print(gh)
+l1=[i[0] for i in gh]
+l2=[i[1] for i in gh]
+print(l1)
+print(l2)
+print("{0:->30}".format("next"))
+l=[l1,l2]
+idx=list("ab")
+di=dict(zip(idx,l))
+print(di)
