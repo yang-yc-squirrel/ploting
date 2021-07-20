@@ -89,3 +89,16 @@ l=[l1,l2]
 idx=list("ab")
 di=dict(zip(idx,l))
 print(di)
+
+pad=pandas.DataFrame(di,columns=["b","a"])
+print(pad)
+print(pad.iloc[0,1])
+rates=2
+rr=pad[::rates]
+print(rr)
+pad=pad.append([dict(b=101,a=-99)],ignore_index=True)
+print(pad)
+esd=pad.values
+print(esd)
+esd=numpy.delete(esd,[2,5],axis=0)
+print(esd)
