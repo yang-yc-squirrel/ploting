@@ -106,3 +106,11 @@ print(esd)
 print(os.getcwd())
 pat="F:/data/lab"
 print(os.path.exists(pat))
+
+if(os.path.isdir(pat)):
+    lp=os.listdir(pat)
+else:
+    raise IOError("wrong")
+print(lp)
+lpat=[pat+"/"+lp[i] for i in range(len(lp))]
+print(lpat)
