@@ -102,3 +102,7 @@ esd=pad.values
 print(esd)
 esd=numpy.delete(esd,[2,5],axis=0)
 print(esd)
+
+print(os.getcwd())
+pat="F:/data/lab"
+print(os.path.exists(pat))
