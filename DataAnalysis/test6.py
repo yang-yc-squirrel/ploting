@@ -11,6 +11,7 @@ import docx
 import turtle
 import heapq
 import re
+import operator
 from PIL import Image
 
 a=numpy.random.randint(5,20,size=(5,3)).flatten()
@@ -109,3 +110,18 @@ with open("F:/rt.txt","w+") as f:
     print(f.tell())
     f.write(strs)
 print(strs)
+
+
+l=os.listdir("F://cmd练习")
+print(l)
+for i in l:
+    k=i.split(".")
+    print(k)
+    print("*".center(30,"-"))
+    if(operator.eq(k.pop(),"txt")):
+        pss="F:"+"//"+i
+        break
+else:
+    pss="none"
+
+print(pss)
