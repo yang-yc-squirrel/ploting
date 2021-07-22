@@ -103,14 +103,9 @@ print(esd)
 esd=numpy.delete(esd,[2,5],axis=0)
 print(esd)
 
-print(os.getcwd())
-pat="F:/data/lab"
-print(os.path.exists(pat))
 
-if(os.path.isdir(pat)):
-    lp=os.listdir(pat)
-else:
-    raise IOError("wrong")
-print(lp)
-lpat=[pat+"/"+lp[i] for i in range(len(lp))]
-print(lpat)
+strs="url".join([chr(ord("a")+random.randint(2,30)) for _ in range(30)])
+with open("F:/rt.txt","w+") as f:
+    print(f.tell())
+    f.write(strs)
+print(strs)
