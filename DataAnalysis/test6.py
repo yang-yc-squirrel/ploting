@@ -112,11 +112,7 @@ with open("F:/rt.txt","w+") as f:
 print(strs)
 
 
-a=[random.choice(list(range(3))) for _ in range(20)]
+a=numpy.array([random.randint(60,180) for i in range(540000)]).reshape(300,600,3)
 print(a)
-ak=[99 if operator.eq(i,0) else i for i in a]
-print(ak)
-
-print(divmod(len(ak),3)[0])
-bk=[ak[i:i+3:1] for i in range(0,len(ak),3)]
-print(bk)
+matplotlib.pyplot.imshow(a)
+matplotlib.pyplot.savefig("F://a.jpg")
