@@ -112,16 +112,7 @@ with open("F:/rt.txt","w+") as f:
 print(strs)
 
 
-l=os.listdir("F://cmd练习")
-print(l)
-for i in l:
-    k=i.split(".")
-    print(k)
-    print("*".center(30,"-"))
-    if(operator.eq(k.pop(),"txt")):
-        pss="F:"+"//"+i
-        break
-else:
-    pss="none"
-
-print(pss)
+a=[random.choice(list(range(3))) for _ in range(20)]
+print(a)
+ak=[99 if operator.eq(i,0) else i for i in a]
+print(ak)
