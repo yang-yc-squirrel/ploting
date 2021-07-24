@@ -112,7 +112,16 @@ with open("F:/rt.txt","w+") as f:
 print(strs)
 
 
-a=numpy.array([random.randint(60,180) for i in range(540000)]).reshape(300,600,3)
-print(a)
-matplotlib.pyplot.imshow(a)
-matplotlib.pyplot.savefig("F://a.jpg")
+p="F:/data"
+fn=os.listdir(p)
+try:
+    for i in fn:
+        if (operator.eq(i.split(".").pop(), "jpg")):
+            fp = p + "/" + i
+            break
+    else:
+        raise IOError("not find")
+except IOError as ioe:
+    print(ioe)
+else:
+    print("path is {fp}".format(fp=fp))
