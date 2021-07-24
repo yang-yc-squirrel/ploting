@@ -125,3 +125,5 @@ except IOError as ioe:
     print(ioe)
 else:
     print("path is {fp}".format(fp=fp))
+finally:
+    print("{0:-^20}".format("end"))
