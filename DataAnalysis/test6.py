@@ -12,6 +12,7 @@ import turtle
 import heapq
 import re
 import operator
+import cv2
 from PIL import Image
 
 a=numpy.random.randint(5,20,size=(5,3)).flatten()
@@ -127,3 +128,14 @@ else:
     print("path is {fp}".format(fp=fp))
 finally:
     print("{0:-^20}".format("end"))
+
+f=cv2.imread(fp)
+f1=cv2.pyrDown(f)
+f2=cv2.pyrDown(f1)
+cv2.imshow("f",f)
+cv2.imshow("f",f1)
+cv2.imshow("f",f2)
+cv2.waitKey()
+cv2.destroyAllWindows()
+cv2.imwrite("F:/f1.jpg",f1)
+cv2.imwrite("F:/f2.jpg",f2)
