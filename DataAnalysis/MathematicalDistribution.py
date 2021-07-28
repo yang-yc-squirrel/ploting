@@ -12,3 +12,18 @@ ax=matplotlib.pyplot.axes(xlim=(-10,10),ylim=(0,1))
 f,=ax.plot([],[])
 x=[]
 y=[]
+
+def init():
+    f.set_data(x,y)
+    return f,
+
+def upd(t):
+    x=numpy.linspace(-10,10,1000)
+    y=numpy.zeros(shape=(1,1000)).flatten()
+    for i in range(1000):
+        y[i]=cauchy(x[i],0,t)
+    f.set_data(x,y)
+    return f,
+
+m=matplotlib.animation.FuncAnimation(p,upd,frames=numpy.linspace(0.5,5,300),init_func=init,blit=True,interval=30)
+matplotlib.pyplot.show()
