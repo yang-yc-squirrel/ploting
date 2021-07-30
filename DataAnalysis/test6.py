@@ -129,9 +129,16 @@ else:
 finally:
     print("{0:-^20}".format("end"))
 
-a=numpy.array([random.choice(list(range(50))) for _ in range(1000)]).reshape(-1,25)
-print(a)
-f=matplotlib.pyplot.figure()
-matplotlib.pyplot.imshow(a,cmap=matplotlib.pyplot.get_cmap("winter"))
-matplotlib.pyplot.colorbar()
-matplotlib.pyplot.show()
+
+r=numpy.array(sorted([random.uniform(0.2,5) for _ in range(5)]))
+print(r)
+r=2*numpy.pi*numpy.array([random.uniform(0.1,0.9) for _ in range(5)])
+print(r)
+ri=numpy.argsort(r)
+print(ri)
+r1=[]
+for i in ri:
+    r1.append(r[i])
+r=numpy.array(r1)
+print(r)
+#f=matplotlib.pyplot.subplot(111,projection="polar")
