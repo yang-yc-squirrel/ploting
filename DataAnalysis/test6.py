@@ -132,13 +132,17 @@ finally:
 
 r=numpy.array(sorted([random.uniform(0.2,5) for _ in range(5)]))
 print(r)
-r=2*numpy.pi*numpy.array([random.uniform(0.1,0.9) for _ in range(5)])
-print(r)
-ri=numpy.argsort(r)
-print(ri)
-r1=[]
-for i in ri:
-    r1.append(r[i])
-r=numpy.array(r1)
-print(r)
-#f=matplotlib.pyplot.subplot(111,projection="polar")
+t=2*numpy.pi*numpy.array([random.uniform(0.1,0.9) for _ in range(5)])
+print(t)
+ti=numpy.argsort(t)
+print(ti)
+t1=[]
+for i in ti:
+    t1.append(t[i])
+t=numpy.array(t1)
+print(t)
+w=numpy.array([numpy.pi*random.uniform(0.1,0.2) for _ in range(5)])
+f=matplotlib.pyplot.subplot(111,projection="polar")
+f.bar(t,r,width=w,color=(1,0,0),alpha=0.3)
+f.set_rlim([0,5])
+matplotlib.pyplot.show()
