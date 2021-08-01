@@ -20,3 +20,9 @@ for i in range(1024):
     y_new.append(res)
 y_new=numpy.array(y_new)
 x_new=x/1024
+
+r=x_new.copy()
+th=[]
+for i in range(1024):
+    th.append(numpy.arccos(y_new[i]))
+th=numpy.array(th)
