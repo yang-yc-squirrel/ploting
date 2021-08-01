@@ -26,3 +26,8 @@ th=[]
 for i in range(1024):
     th.append(numpy.arccos(y_new[i]))
 th=numpy.array(th)
+
+G=numpy.zeros(shape=(1024,1024))
+for i in range(1024):
+    for j in range(1024):
+        G[i,j]=numpy.cos(th[i]+th[j])
