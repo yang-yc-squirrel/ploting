@@ -31,3 +31,10 @@ G=numpy.zeros(shape=(1024,1024))
 for i in range(1024):
     for j in range(1024):
         G[i,j]=numpy.cos(th[i]+th[j])
+
+
+f=matplotlib.pyplot.figure()
+f1=f.add_subplot(1,3,1)
+matplotlib.pyplot.sca(f1)
+matplotlib.pyplot.plot(x,y)
+matplotlib.pyplot.show()
