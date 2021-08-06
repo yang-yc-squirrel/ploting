@@ -7,6 +7,11 @@ def cauchy(x,t,s):
     fx=1/fx
     return fx
 
+def Gaussian(x,u,s):
+    fx=numpy.exp(-1*((x-u)**2)/(2*(s**2)))
+    fx=fx/s*((2*numpy.pi)**0.5)
+    return fx
+
 p=matplotlib.pyplot.figure()
 ax=matplotlib.pyplot.axes(xlim=(-10,10),ylim=(0,1))
 f,=ax.plot([],[])
