@@ -15,6 +15,14 @@ import operator
 import cv2
 from PIL import Image
 
+def fx(x):
+    d=len(x)
+    s=0
+    for i in range(d):
+        s+=((x[i]**2)-10*numpy.cos(2*numpy.pi*x[i]))
+    s+=10*d
+    return s
+
 a=list(range(16))
 print(a)
 c1=list(itertools.combinations(a,3))
@@ -26,5 +34,14 @@ matplotlib.pyplot.sca(f1)
 t=numpy.arange(0,numpy.pi,numpy.pi/6)
 r=numpy.array([random.uniform(0.5,5) for i in range(6)])
 f1.scatter(t,r,color=(1,0,0),s=numpy.array([random.choice(list(range(30,90,10))) for i in range(6)]),alpha=0.2)
+
+f2=f.add_subplot(1,2,2,projection="3d")
+matplotlib.pyplot.sca(f2)
+o=numpy.linspace(-5,5,100)
+p=numpy.linspace(-5,5,100)
+x,y=numpy.meshgrid(o,p)
+print(x)
 matplotlib.pyplot.show()
+
+
 
