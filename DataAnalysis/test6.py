@@ -40,7 +40,8 @@ matplotlib.pyplot.sca(f2)
 o=numpy.linspace(-5,5,100)
 p=numpy.linspace(-5,5,100)
 x,y=numpy.meshgrid(o,p)
-print(x)
+z=numpy.zeros(shape=(100,100))
+print(z)
 matplotlib.pyplot.show()
 
 
