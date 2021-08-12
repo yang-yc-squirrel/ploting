@@ -41,7 +41,10 @@ o=numpy.linspace(-5,5,100)
 p=numpy.linspace(-5,5,100)
 x,y=numpy.meshgrid(o,p)
 z=numpy.zeros(shape=(100,100))
-print(z)
+for i in range(100):
+    for j in range(100):
+        z[i,j]=fx([x[i,j],y[i,j]])
+f2.plot_surface(x,y,z,cmap=matplotlib.pyplot.get_cmap("winter"))
 matplotlib.pyplot.show()
 
 
