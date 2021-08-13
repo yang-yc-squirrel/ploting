@@ -21,8 +21,25 @@ def fx(x):
 
 x=numpy.linspace(0,2*numpy.pi,1024)
 y=numpy.zeros(shape=(1,1024)).flatten()
-print(x)
-print(y)
 
+for i in range(1024):
+    y[i]=fx(x[i])
 
+f1=matplotlib.pyplot.figure()
+
+ysi=numpy.argsort(y)
+
+ymax=y[ysi[-1]]
+ymin=y[ysi[0]]
+y_new=numpy.zeros(shape=(1,1024)).flatten()
+for i in range(1024):
+    y_new[i]=((y[i]-ymax)+(y[i]-ymin))/(ymax-ymin)
+th=numpy.zeros(shape=(1,1024)).flatten()
+for i in range(1024):
+    th[i]=numpy.arccos(y_new[i])
+
+r=numpy.array([x[i]/1024 for i in range(1024)])
+f=f1.add_subplot(1,1,1,projection="polar")
+f.plot(th,r,color=(1,0,0))
+matplotlib.pyplot.show()
 
