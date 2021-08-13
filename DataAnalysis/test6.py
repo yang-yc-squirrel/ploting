@@ -16,36 +16,13 @@ import cv2
 from PIL import Image
 
 def fx(x):
-    d=len(x)
-    s=0
-    for i in range(d):
-        s+=((x[i]**2)-10*numpy.cos(2*numpy.pi*x[i]))
-    s+=10*d
-    return s
+    y=10*numpy.sin(100*numpy.pi*x)+15*numpy.sin(50*numpy.pi*x)+25*numpy.cos(20*numpy.pi*x)+2*numpy.sin(5*numpy.pi*x)+15*numpy.cos(80*numpy.pi*x)
+    return y
 
-a=list(range(16))
-print(a)
-c1=list(itertools.combinations(a,3))
-print(len(c1))
-
-f=matplotlib.pyplot.figure()
-f1=f.add_subplot(1,2,1,projection="polar")
-matplotlib.pyplot.sca(f1)
-t=numpy.arange(0,numpy.pi,numpy.pi/6)
-r=numpy.array([random.uniform(0.5,5) for i in range(6)])
-f1.scatter(t,r,color=(1,0,0),s=numpy.array([random.choice(list(range(30,90,10))) for i in range(6)]),alpha=0.2)
-
-f2=f.add_subplot(1,2,2,projection="3d")
-matplotlib.pyplot.sca(f2)
-o=numpy.linspace(-5,5,100)
-p=numpy.linspace(-5,5,100)
-x,y=numpy.meshgrid(o,p)
-z=numpy.zeros(shape=(100,100))
-for i in range(100):
-    for j in range(100):
-        z[i,j]=fx([x[i,j],y[i,j]])
-f2.plot_surface(x,y,z,cmap=matplotlib.pyplot.get_cmap("winter"))
-matplotlib.pyplot.show()
+x=numpy.linspace(0,2*numpy.pi,1024)
+y=numpy.zeros(shape=(1,1024)).flatten()
+print(x)
+print(y)
 
 
 
