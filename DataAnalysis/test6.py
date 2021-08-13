@@ -19,7 +19,7 @@ def fx(x):
     y=10*numpy.sin(100*numpy.pi*x)+15*numpy.sin(50*numpy.pi*x)+25*numpy.cos(20*numpy.pi*x)+2*numpy.sin(5*numpy.pi*x)+15*numpy.cos(80*numpy.pi*x)
     return y
 
-x=numpy.linspace(0,2*numpy.pi,1024)
+x=numpy.linspace(0,1,1024)
 y=numpy.zeros(shape=(1,1024)).flatten()
 
 for i in range(1024):
@@ -39,7 +39,9 @@ for i in range(1024):
     th[i]=numpy.arccos(y_new[i])
 
 r=numpy.array([x[i]/1024 for i in range(1024)])
-f=f1.add_subplot(1,1,1,projection="polar")
-f.plot(th,r,color=(1,0,0))
-matplotlib.pyplot.show()
-
+G=numpy.zeros(shape=(1024,1024))
+for i in range(1024):
+    for j in range(1024):
+        G[i,j]=numpy.cos(th[i]+th[j])
+matplotlib.pyplot.imshow(G,cmap=matplotlib.pyplot.get_cmap("winter"))
+matplotlib.pyplot.savefig("F://f1.jpg")
