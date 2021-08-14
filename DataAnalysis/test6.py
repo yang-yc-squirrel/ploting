@@ -47,7 +47,7 @@ for i in range(1024):
 r=numpy.array([x[i]/1024 for i in range(1024)])
 matplotlib.pyplot.sca(f2)
 f2.scatter(th,r,s=3,color=(1,0,0),alpha=0.5)
-
+f2.set_rlim(0,0.001)
 matplotlib.pyplot.tick_params(labelsize=10)
 
 
