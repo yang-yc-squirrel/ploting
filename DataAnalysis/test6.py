@@ -25,7 +25,12 @@ y=numpy.zeros(shape=(1,1024)).flatten()
 for i in range(1024):
     y[i]=fx(x[i])
 
-f1=matplotlib.pyplot.figure()
+f=matplotlib.pyplot.figure()
+f1=f.add_subplot(2,1,1)
+f2=f.add_subplot(2,2,3,projection="polar")
+f3=f.add_subplot(2,2,4)
+matplotlib.pyplot.sca(f1)
+matplotlib.pyplot.plot(x,y,color=(1,0,1))
 
 ysi=numpy.argsort(y)
 
@@ -39,9 +44,16 @@ for i in range(1024):
     th[i]=numpy.arccos(y_new[i])
 
 r=numpy.array([x[i]/1024 for i in range(1024)])
+matplotlib.pyplot.sca(f2)
+f2.scatter(th,r,s=3,color=(1,0,0),alpha=0.5)
+
+
+
 G=numpy.zeros(shape=(1024,1024))
 for i in range(1024):
     for j in range(1024):
         G[i,j]=numpy.cos(th[i]+th[j])
+matplotlib.pyplot.sca(f3)
 matplotlib.pyplot.imshow(G,cmap=matplotlib.pyplot.get_cmap("winter"))
-matplotlib.pyplot.savefig("F://f1.jpg")
+
+matplotlib.pyplot.show()
