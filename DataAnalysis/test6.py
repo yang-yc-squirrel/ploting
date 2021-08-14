@@ -31,6 +31,7 @@ f2=f.add_subplot(2,2,3,projection="polar")
 f3=f.add_subplot(2,2,4)
 matplotlib.pyplot.sca(f1)
 matplotlib.pyplot.plot(x,y,color=(1,0,1))
+matplotlib.pyplot.tick_params(labelsize=10)
 
 ysi=numpy.argsort(y)
 
@@ -47,6 +48,8 @@ r=numpy.array([x[i]/1024 for i in range(1024)])
 matplotlib.pyplot.sca(f2)
 f2.scatter(th,r,s=3,color=(1,0,0),alpha=0.5)
 
+matplotlib.pyplot.tick_params(labelsize=10)
+
 
 
 G=numpy.zeros(shape=(1024,1024))
@@ -55,5 +58,5 @@ for i in range(1024):
         G[i,j]=numpy.cos(th[i]+th[j])
 matplotlib.pyplot.sca(f3)
 matplotlib.pyplot.imshow(G,cmap=matplotlib.pyplot.get_cmap("winter"))
-
+matplotlib.pyplot.tick_params(labelsize=10)
 matplotlib.pyplot.show()
