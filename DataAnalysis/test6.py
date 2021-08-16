@@ -32,6 +32,7 @@ f3=f.add_subplot(2,2,4)
 matplotlib.pyplot.sca(f1)
 matplotlib.pyplot.plot(x,y,color=(1,0,1),label="y$_1$=signal(x)")
 matplotlib.pyplot.legend(loc=5)
+matplotlib.pyplot.xlabel("signal",fontdict={"family":"Times New Roman","size":20})
 matplotlib.pyplot.tick_params(labelsize=10)
 
 ysi=numpy.argsort(y)
