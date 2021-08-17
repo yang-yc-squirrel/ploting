@@ -32,14 +32,10 @@ f=matplotlib.pyplot.figure()
 f3d=mpl_toolkits.mplot3d.Axes3D(f)
 
 a=0
-while(True):
-    matplotlib.pyplot.cla()
-    f3d.plot3D(x,y,z,color=(1,0,0))
-    f3d.view_init(a,90)
-    matplotlib.pyplot.pause(2)
-    a+=5
-    if(a>=90):
-        break
+f3d.plot(x,y,z,color=(1,0,0))
+for i in range(0,90,10):
+    f3d.view_init(i,20)
+    matplotlib.pyplot.show()
 
 
 ysi=numpy.argsort(y)
