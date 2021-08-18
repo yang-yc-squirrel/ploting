@@ -31,39 +31,5 @@ for i in range(1024):
 f=matplotlib.pyplot.figure()
 f3d=mpl_toolkits.mplot3d.Axes3D(f)
 
-a=0
-f3d.plot(x,y,z,color=(1,0,0))
-b=30
-while(True):
-    matplotlib.pyplot.cla()
-    f3d.view_init(a,b)
-    a=a+10
-    if(a>=90):
-        a=0
-    matplotlib.pyplot.pause(2)
-
-
-ysi=numpy.argsort(y)
-
-ymax=y[ysi[-1]]
-ymin=y[ysi[0]]
-y_new=numpy.zeros(shape=(1,1024)).flatten()
-for i in range(1024):
-    y_new[i]=((y[i]-ymax)+(y[i]-ymin))/(ymax-ymin)
-th=numpy.zeros(shape=(1,1024)).flatten()
-for i in range(1024):
-    th[i]=numpy.arccos(y_new[i])
-
-r=numpy.array([x[i]/1024 for i in range(1024)])
-
-
-
-
-G=numpy.zeros(shape=(1024,1024))
-for i in range(1024):
-    for j in range(1024):
-        G[i,j]=numpy.cos(th[i]+th[j])
-
-
-
-#matplotlib.pyplot.show()
+f3d.scatter3D(x,y,z,color="#ff0000",alpha=0.5)
+matplotlib.pyplot.savefig("F:/其它/figure.jpg")
