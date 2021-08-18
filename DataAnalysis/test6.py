@@ -32,4 +32,15 @@ f=matplotlib.pyplot.figure()
 f3d=mpl_toolkits.mplot3d.Axes3D(f)
 
 f3d.scatter3D(x,y,z,color="#ff0000",alpha=0.5)
-matplotlib.pyplot.savefig("F:/其它/figure.jpg")
+
+p=cv2.imread("F:/figure.jpg")
+p1=cv2.pyrDown(p)
+p2=cv2.pyrDown(p1)
+
+cv2.imshow("p",p)
+cv2.imshow("p1",p1)
+cv2.imshow("p2",p2)
+
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+print(p1)
