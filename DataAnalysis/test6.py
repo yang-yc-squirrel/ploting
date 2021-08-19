@@ -30,7 +30,22 @@ def F(x):
     s=s*(-1)+418.9829*d
     return s
 
-p=numpy.linspace(0,500,2000)
-print(p)
+p=numpy.linspace(0,200,1000)
+
 x,y=numpy.meshgrid(p,p)
-print(x)
+z=numpy.zeros(shape=(1000,1000))
+for i in range(1000):
+    for j in range(1000):
+        z[i,j]=F([x[i,j],y[i,j]])
+
+f=matplotlib.pyplot.figure()
+fn=mpl_toolkits.mplot3d.Axes3D(f)
+#fn.plot_surface(x,y,z,cmap=matplotlib.pyplot.get_cmap("hot"))
+fn.contourf(x,y,z,cmap=matplotlib.pyplot.get_cmap("hot"))
+matplotlib.pyplot.savefig("F:/ff.jpg")
+
+a=cv2.imread("F:/ff.jpg")
+print(a)
+pi=matplotlib.pyplot.figure()
+matplotlib.pyplot.imshow(a,cmap=matplotlib.pyplot.get_cmap("Greys"))
+matplotlib.pyplot.show()
