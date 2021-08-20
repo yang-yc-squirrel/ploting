@@ -1,4 +1,6 @@
-while(True):
+import numpy
+import matplotlib.pyplot
+'''while(True):
     try:
         a = int(input("please input a number:"))
     except ValueError:
@@ -17,4 +19,16 @@ while(True):
         break
     else:
         n+=1
-print("answer is {res}".format(res=res))
+print("answer is {res}".format(res=res))'''
+
+
+x=numpy.arange(0,10,0.1)
+print(x)
+y=numpy.cos(x)
+print(y)
+
+f=matplotlib.pyplot.figure()
+matplotlib.pyplot.plot(x,y,color=(1,0,0))
+matplotlib.pyplot.xticks(numpy.arange(0,11,1),fontproperties="Times New Roman",size=30)
+matplotlib.pyplot.yticks(numpy.linspace(-1,1,5),fontproperties="Times New Roman",size=30)
+matplotlib.pyplot.show()
