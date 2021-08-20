@@ -1,6 +1,6 @@
 import numpy
 import matplotlib.pyplot
-'''while(True):
+while(True):
     try:
         a = int(input("please input a number:"))
     except ValueError:
@@ -19,7 +19,7 @@ while(True):
         break
     else:
         n+=1
-print("answer is {res}".format(res=res))'''
+print("answer is {res}".format(res=res))
 
 
 x=numpy.arange(0,10,0.1)
@@ -39,6 +39,7 @@ matplotlib.pyplot.sca(f2)
 th=[numpy.pi*i*0.1 for i in range(0,6,1)]
 r=numpy.random.randint(2,7,size=(1,6)).flatten()
 f2.scatter(th,r,color="red")
+f2.set_rticks(numpy.arange(0,7,0.1))
 
 
 matplotlib.pyplot.show()
