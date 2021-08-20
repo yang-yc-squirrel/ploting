@@ -28,7 +28,17 @@ y=numpy.cos(x)
 print(y)
 
 f=matplotlib.pyplot.figure()
+f1=f.add_subplot(2,1,1)
+matplotlib.pyplot.sca(f1)
 matplotlib.pyplot.plot(x,y,color=(1,0,0))
 matplotlib.pyplot.xticks(numpy.arange(0,11,1),fontproperties="Times New Roman",size=30)
 matplotlib.pyplot.yticks(numpy.linspace(-1,1,5),fontproperties="Times New Roman",size=30)
+
+f2=f.add_subplot(2,1,2,projection="polar")
+matplotlib.pyplot.sca(f2)
+th=[numpy.pi*i*0.1 for i in range(0,6,1)]
+r=numpy.random.randint(2,7,size=(1,6)).flatten()
+f2.scatter(th,r,color="red")
+
+
 matplotlib.pyplot.show()
