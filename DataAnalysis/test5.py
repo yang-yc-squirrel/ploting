@@ -33,6 +33,7 @@ matplotlib.pyplot.sca(f1)
 matplotlib.pyplot.plot(x,y,color=(1,0,0))
 matplotlib.pyplot.xticks(numpy.arange(0,11,1),[chr(ord("a")+i) for i in range(11)],fontproperties="Times New Roman",size=30)
 matplotlib.pyplot.yticks(numpy.linspace(-1,1,5),fontproperties="Times New Roman",size=30)
+f1.set_title("Cartesian",fontdict={"family":"Times New Roman","size":20})
 
 f2=f.add_subplot(2,1,2,projection="polar")
 matplotlib.pyplot.sca(f2)
@@ -42,6 +43,7 @@ f2.scatter(th,r,color="red")
 f2.set_rticks(numpy.arange(0,7,0.1))
 f2.set_rlim([0,9])
 f2.set_rlabel_position(320)
+f2.set_title("polar",fontdict={"family":"Times New Roman","size":20})
 
-
+matplotlib.pyplot.tight_layout()
 matplotlib.pyplot.show()
