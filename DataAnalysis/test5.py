@@ -35,7 +35,7 @@ matplotlib.pyplot.xticks(numpy.arange(0,11,1),[chr(ord("a")+i) for i in range(11
 matplotlib.pyplot.yticks(numpy.linspace(-1,1,5),fontproperties="Times New Roman",size=30)
 f1.set_title("Cartesian",fontdict={"family":"Times New Roman","size":20})
 
-f2=f.add_subplot(2,1,2,projection="polar")
+f2=f.add_subplot(2,2,3,projection="polar")
 matplotlib.pyplot.sca(f2)
 th=[numpy.pi*i*0.1 for i in range(0,6,1)]
 r=numpy.random.randint(2,7,size=(1,6)).flatten()
@@ -44,6 +44,13 @@ f2.set_rticks(numpy.arange(0,7,0.1))
 f2.set_rlim([0,9])
 f2.set_rlabel_position(320)
 f2.set_title("polar",fontdict={"family":"Times New Roman","size":20})
+
+f3=f.add_subplot(2,2,4,projection="3d")
+matplotlib.pyplot.sca(f3)
+p=numpy.linspace(0,10,100)
+x,y=numpy.meshgrid(p,p)
+print(x)
+print(y)
 
 matplotlib.pyplot.tight_layout()
 matplotlib.pyplot.show()
