@@ -54,10 +54,14 @@ f2.set_title("polar",fontdict={"family":"Times New Roman","size":20})
 
 f3=f.add_subplot(2,2,4,projection="3d")
 matplotlib.pyplot.sca(f3)
-p=numpy.linspace(0,10,100)
+p=numpy.linspace(-5,5,100)
 x,y=numpy.meshgrid(p,p)
 print(x)
 print(y)
-
+z=numpy.zeros(shape=(100,100))
+for i in range(100):
+    for j in range(100):
+        z[i,j]=F(x[i,j],y[i,j])
+f3.plot_surface(x,y,z,cmap=matplotlib.pyplot.get_cmap("hot"))
 matplotlib.pyplot.tight_layout()
 matplotlib.pyplot.show()
