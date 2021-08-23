@@ -27,6 +27,13 @@ print(x)
 y=numpy.cos(x)
 print(y)
 
+
+def F(x,y):
+    s2=0.01*abs(x+10)
+    s1=100*((abs(y-0.01*(x**2)))**0.5)
+    res=s1+s2
+    return res
+
 f=matplotlib.pyplot.figure()
 f1=f.add_subplot(2,1,1)
 matplotlib.pyplot.sca(f1)
