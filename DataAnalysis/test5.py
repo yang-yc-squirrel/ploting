@@ -63,5 +63,6 @@ for i in range(100):
     for j in range(100):
         z[i,j]=F(x[i,j],y[i,j])
 f3.plot_surface(x,y,z,cmap=matplotlib.pyplot.get_cmap("hot"))
+f3.view_init(30,50)
 matplotlib.pyplot.tight_layout()
 matplotlib.pyplot.show()
