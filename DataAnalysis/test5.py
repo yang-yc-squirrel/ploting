@@ -1,4 +1,6 @@
 import numpy
+import re
+import time
 import matplotlib.pyplot
 '''while(True):
     try:
@@ -21,6 +23,11 @@ while(True):
         n+=1
 print("answer is {res}".format(res=res))'''
 
+
+
+print(time.time())
+print(time.localtime(time.time()))
+print(time.strftime("%Y-%m-%d %H:%M:%S",time.localtime(time.time())))
 
 x=numpy.arange(0,10,0.1)
 print(x)
