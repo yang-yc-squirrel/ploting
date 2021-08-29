@@ -32,6 +32,8 @@ print(time.strftime("%Y-%m-%d %H:%M:%S",time.localtime(time.time())))
 
 d=datetime.date.today()
 d=d.strftime("%Y year %m month %d day")
+d1=datetime.time(12,23,22)
+print(d1.second)
 print(d)
 
 x=numpy.arange(0,10,0.1)
