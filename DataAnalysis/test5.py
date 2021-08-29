@@ -1,6 +1,7 @@
 import numpy
 import re
 import time
+import datetime
 import matplotlib.pyplot
 '''while(True):
     try:
@@ -28,6 +29,10 @@ print("answer is {res}".format(res=res))'''
 print(time.time())
 print(time.localtime(time.time()))
 print(time.strftime("%Y-%m-%d %H:%M:%S",time.localtime(time.time())))
+
+d=datetime.date.today()
+d=d.strftime("%Y year %m month %d day")
+print(d)
 
 x=numpy.arange(0,10,0.1)
 print(x)
