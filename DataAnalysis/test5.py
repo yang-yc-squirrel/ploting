@@ -36,6 +36,12 @@ d1=datetime.time(12,23,22)
 print(d1.second)
 print(d)
 
+d2=datetime.datetime.now()
+print(d2)
+d3=d2.strftime("%Y-%m-%d %H:%M:%S")
+print(d3)
+print(d2)
+
 x=numpy.arange(0,10,0.1)
 print(x)
 y=numpy.cos(x)
