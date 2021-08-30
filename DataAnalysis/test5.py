@@ -42,6 +42,9 @@ d3=d2.strftime("%Y-%m-%d %H:%M:%S")
 print(d3)
 print(d2)
 
+d5=datetime.datetime.fromtimestamp(time.time())
+print(d5)
+
 x=numpy.arange(0,10,0.1)
 print(x)
 y=numpy.cos(x)
