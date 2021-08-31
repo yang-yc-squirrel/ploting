@@ -1,6 +1,7 @@
 import numpy
 import re
 import time
+import random
 import datetime
 import matplotlib.pyplot
 '''while(True):
@@ -50,6 +51,9 @@ print(x)
 y=numpy.cos(x)
 print(y)
 
+aa=[chr(ord("a")+i) for i in random.shuffle(list(range(10)))]
+bb=[random.choice(list(range(10,30,2))) for i in range(7)]
+print("aa is {0} \n bb is {1} \n".format(aa,bb))
 
 def F(x,y):
     s2=0.01*abs(x+10)
