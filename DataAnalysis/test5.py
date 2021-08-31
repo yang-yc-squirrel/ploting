@@ -59,6 +59,15 @@ print("aa is {0} \n bb is {1} \n".format(aa,bb))
 dd=dict(itertools.zip_longest(aa,bb,fillvalue=200))
 print(dd)
 
+print(dd.keys())
+print(dd.values())
+print(dd.items())
+
+print(dd.get("b","error"))
+dd["x"]=12306
+print(dd)
+print("next".center(30,"-"))
+
 def F(x,y):
     s2=0.01*abs(x+10)
     s1=100*((abs(y-0.01*(x**2)))**0.5)
