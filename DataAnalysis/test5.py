@@ -52,7 +52,7 @@ print(x)
 y=numpy.cos(x)
 print(y)
 
-aa=[chr(ord("a")+i) for i in random.shuffle(list(range(10)))]
+aa=[chr(ord("a")+i) for i in [random.choice(list(range(20))) for j in range(10)]]
 bb=[random.choice(list(range(10,30,2))) for i in range(7)]
 print("aa is {0} \n bb is {1} \n".format(aa,bb))
 
