@@ -80,6 +80,13 @@ print("ff2 is {0}".format(ff2))
 
 print(ff3)
 
+def pps(x,y):
+    return 2*x+7*y-15
+
+lv=functools.partial(pps,y=2)
+print(lv(3))
+print(lv(5))
+
 def F(x,y):
     s2=0.01*abs(x+10)
     s1=100*((abs(y-0.01*(x**2)))**0.5)
