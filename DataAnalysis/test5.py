@@ -5,6 +5,7 @@ import random
 import itertools
 import datetime
 import matplotlib.pyplot
+import functools
 '''while(True):
     try:
         a = int(input("please input a number:"))
@@ -67,6 +68,17 @@ print(dd.get("b","error"))
 dd["x"]=12306
 print(dd)
 print("next".center(30,"-"))
+
+
+fls=list(numpy.random.randint(2,30,size=(3,5)).flatten())
+ff1=list(map(lambda x:x**2,fls))
+ff2=list(filter(lambda x:x>15,fls))
+ff3=functools.reduce(lambda x,y:x+y,fls)
+print("fls is {0}".format(fls))
+print("ff1 is {0}".format(ff1))
+print("ff2 is {0}".format(ff2))
+
+print(ff3)
 
 def F(x,y):
     s2=0.01*abs(x+10)
