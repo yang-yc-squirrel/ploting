@@ -25,11 +25,25 @@ class Score:
         self._score=null_s
 
     def __set__(self,instance,value):
-        if()
+        if(operator.gt(value,100) or operator.lt(value,0)):
+            raise IOError("out of range")
+        else:
+            self._score=value
+
+    def __get__(self,instance,owner):
+        return self._score
 
 
 class Student:
+    history=Score(0)
+    physics=Score(0)
+    biology=Score(0)
+
     def __init__(self,name,history,physics,biology):
+        self.history=history
+        self.physics=physics
+        self.biology=biology
+    
 
 
 
