@@ -1,3 +1,4 @@
+import operator
 class Grade:
     def __init__(self,name,chinese,math,english):
         self.name=name
@@ -18,6 +19,19 @@ class Grade:
             self.tmath = value
         else:
             raise IOError("out of range")
+
+class Score:
+    def __init__(self,null_s):
+        self._score=null_s
+
+    def __set__(self,instance,value):
+        if()
+
+
+class Student:
+    def __init__(self,name,history,physics,biology):
+
+
 
 
 
