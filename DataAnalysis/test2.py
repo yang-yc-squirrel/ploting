@@ -43,8 +43,13 @@ class Student:
         self.history=history
         self.physics=physics
         self.biology=biology
-    
 
+    def __str__(self):
+        return "std:{0} \n The transcript is as follows \n history:{1} physics:{2} biology:{3}".format(self.name,self.history,self.physics,self.biology)
+
+    def avecal(self):
+        res=(self.history+self.physics+self.biology)/3
+        return res
 
 
 
