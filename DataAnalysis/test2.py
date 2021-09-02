@@ -54,10 +54,21 @@ class Student:
 
 
 
-if(__name__=="__main__"):
+'''if(__name__=="__main__"):
     try:
         g1 = Grade("xiaoming", 95,70, 80)
         print(g1)
         g1()
     except IOError as ioe:
+        print(ioe)'''
+
+if(__name__=="__main__"):
+    try:
+        s1=Student("xiaozhi",98,65,83)
+        print(s1)
+        av=s1.avecal()
+        print("the average score of {0} is {1}".format(s1.name,av))
+    except IOError as ioe:
         print(ioe)
+    else:
+        print("no problem".center(20,"*"))
