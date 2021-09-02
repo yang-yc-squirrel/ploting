@@ -40,12 +40,17 @@ class Student:
     biology=Score(0)
 
     def __init__(self,name,history,physics,biology):
+        self.name=name
         self.history=history
         self.physics=physics
         self.biology=biology
 
     def __str__(self):
         return "std:{0} \n The transcript is as follows \n history:{1} physics:{2} biology:{3}".format(self.name,self.history,self.physics,self.biology)
+
+    @property
+    def _name(self):
+        return self.name
 
     def avecal(self):
         res=(self.history+self.physics+self.biology)/3
@@ -67,7 +72,7 @@ if(__name__=="__main__"):
         s1=Student("xiaozhi",98,65,83)
         print(s1)
         av=s1.avecal()
-        print("the average score of {0} is {1}".format(s1.name,av))
+        print("the average score of {0} is {1}".format(s1._name,av))
     except IOError as ioe:
         print(ioe)
     else:
