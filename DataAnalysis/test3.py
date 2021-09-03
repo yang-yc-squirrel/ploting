@@ -1,5 +1,7 @@
 import matplotlib.pyplot
 import random
+import numpy
+
 def Hammingcode(m):
     k=1
     while(True):
@@ -41,5 +43,15 @@ for i in range(5):
 
 matplotlib.pyplot.title("Histogram", fontdict={"family":"Times New Roman","size": 14})
 matplotlib.pyplot.axis([0,12,0,max(c)+3])
+
+matplotlib.pyplot.sca(f2)
+ax2=matplotlib.pyplot.gca()
+gg=numpy.random.randint(2,15,size=(2,5))
+gg1=gg.flatten()
+matplotlib.pyplot.pie(gg1,radius=1,wedgeprops={"width":0.2,"edgecolor":"w"})
+gg2=gg.sum(axis=1)
+matplotlib.pyplot.pie(gg2,radius=0.8,wedgeprops={"width":0.2,"edgecolor":"w"})
+matplotlib.pyplot.axis("equal")
+
 
 matplotlib.pyplot.show()
