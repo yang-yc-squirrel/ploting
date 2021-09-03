@@ -28,4 +28,14 @@ b=[random.randint(5,10) for i in range(5)]
 matplotlib.pyplot.bar(x,a,width=0.4,facecolor="#ff0000")
 matplotlib.pyplot.bar(x,b,bottom=a,width=0.4,facecolor="#0000ff")
 
+x_tick1=ax1.get_xticklabels()
+[n.set_fontname("Times New Roman") for n in x_tick1]
+y_tick1=ax1.get_yticklabels()
+[n.set_fontname('Times New Roman') for n in y_tick1]
+
+for i in range(5):
+    matplotlib.pyplot.text(x[i]-0.25,a[i]+b[i]+0.5,str(format(a[i]+b[i],"0.2f")),fontdict={"family":"Times New Roman","size":15})
+
+matplotlib.pyplot.title("Histogram", fontdict={"family":"Times New Roman","size": 14})
+
 matplotlib.pyplot.show()
