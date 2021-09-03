@@ -13,13 +13,23 @@ def Hammingcode(m):
         k+=1
     return res
 
+def F(x):
+    d=len(x)
+    s=0
+    for i in range(d):
+        s+=x[i]**2
+    m1=1+numpy.cos(12*s**0.5)
+    m2=0.5*s+2
+    res=m1/m2
+    return res
+
 a=Hammingcode(16)
 print(a)
 
 f=matplotlib.pyplot.figure()
 f1=f.add_subplot(2,1,1)
 f2=f.add_subplot(2,2,3)
-f3=f.add_subplot(2,2,4)
+f3=f.add_subplot(2,2,4,projection="3d")
 
 matplotlib.pyplot.sca(f1)
 ax1=matplotlib.pyplot.gca()
@@ -53,5 +63,14 @@ gg2=gg.sum(axis=1)
 matplotlib.pyplot.pie(gg2,radius=0.8,wedgeprops={"width":0.2,"edgecolor":"w"})
 matplotlib.pyplot.axis("equal")
 
+matplotlib.pyplot.sca(f3)
+p=numpy.linspace(-2,2,100)
+x,y=numpy.meshgrid(p,p)
+z=numpy.zeros(shape=(100,100))
+for i in range(100):
+    for j in range(100):
+        z[i,j]=F([x[i,j],y[i,j]])
+f3.plot_surface(x,y,z,cmap=matplotlib.pyplot.get_cmap("winter"))
+matplotlib.pyplot.axis("off")
 
 matplotlib.pyplot.show()
