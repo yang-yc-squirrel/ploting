@@ -52,6 +52,8 @@ for i in range(5):
     matplotlib.pyplot.text(x[i]-0.25,a[i]+b[i]+0.5,str(format(a[i]+b[i],"0.2f")),fontdict={"family":"Times New Roman","size":15})
 
 matplotlib.pyplot.title("Histogram", fontdict={"family":"Times New Roman","size": 14})
+matplotlib.pyplot.xticks([2,4,6,8,10],list("abcde"))
+matplotlib.pyplot.tick_params(labelsize=16)
 matplotlib.pyplot.axis([0,12,0,max(c)+3])
 
 matplotlib.pyplot.sca(f2)
@@ -62,6 +64,7 @@ matplotlib.pyplot.pie(gg1,radius=1,wedgeprops={"width":0.2,"edgecolor":"w"})
 gg2=gg.sum(axis=1)
 matplotlib.pyplot.pie(gg2,radius=0.8,wedgeprops={"width":0.2,"edgecolor":"w"})
 matplotlib.pyplot.axis("equal")
+matplotlib.pyplot.title("Ring",fontdict={"family":"Times New Roman","size":14})
 
 matplotlib.pyplot.sca(f3)
 p=numpy.linspace(-2,2,100)
@@ -71,6 +74,9 @@ for i in range(100):
     for j in range(100):
         z[i,j]=F([x[i,j],y[i,j]])
 f3.plot_surface(x,y,z,cmap=matplotlib.pyplot.get_cmap("winter"))
+f3.view_init(20,20)
+matplotlib.pyplot.title("3D-ploting",fontdict={"family":"Times New Roman","size":14})
 matplotlib.pyplot.axis("off")
 
+matplotlib.pyplot.tight_layout()
 matplotlib.pyplot.show()
