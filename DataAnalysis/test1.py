@@ -50,5 +50,14 @@ ax3.set_rlim([0,10])
 ax3.set_rticks(numpy.arange(0,3,0.1))
 ax3.set_rlabel_position(300)
 
+ax4=matplotlib.pyplot.subplot2grid((3,3),(1,0),colspan=1,rowspan=2)
+ax4.bar([2,4,6],numpy.random.randint(5,10,size=(1,3)).flatten(),width=0.5,facecolor=(1,0.5,0))
+matplotlib.pyplot.xticks([2,4,6],list("abc"))
+xt=ax4.get_xticklabels()
+[n.set_fontname("Times New Roman") for n in xt]
+yt=ax4.get_yticklabels()
+[n.set_fontname("Times New Roman") for n in yt]
+matplotlib.pyplot.tick_params(labelsize=16)
+
 
 matplotlib.pyplot.show()
