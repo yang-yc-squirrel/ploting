@@ -33,5 +33,13 @@ a=list(range(1,6,1))
 b=[random.randint(5,15) for i in range(5)]
 ax1.bar(a,b,color="#ff0000")
 
+ax2=matplotlib.pyplot.subplot2grid((3,3),(0,2),colspan=1,rowspan=2)
+x=numpy.linspace(0,2*numpy.pi,100)
+y=numpy.zeros(shape=(1,100)).flatten()
+for i in range(100):
+    y[i]=numpy.sin(2*x[i])
+ax2.plot(x,y,color="#ff0000")
+matplotlib.pyplot.tight_layout()
+
 
 matplotlib.pyplot.show()
