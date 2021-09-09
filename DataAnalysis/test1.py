@@ -59,5 +59,8 @@ yt=ax4.get_yticklabels()
 [n.set_fontname("Times New Roman") for n in yt]
 matplotlib.pyplot.tick_params(labelsize=16)
 
+ax5=matplotlib.pyplot.subplot2grid((3,3),(2,1),colspan=2,rowspan=1)
+t=numpy.linspace(0,2,100)
+ft=numpy.zeros(shape=(50,2)).flatten()
 
 matplotlib.pyplot.show()
