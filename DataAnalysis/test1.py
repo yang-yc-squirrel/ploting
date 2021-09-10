@@ -63,4 +63,10 @@ ax5=matplotlib.pyplot.subplot2grid((3,3),(2,1),colspan=2,rowspan=1)
 t=numpy.linspace(0,2,100)
 ft=numpy.zeros(shape=(50,2)).flatten()
 
+for i in range(100):
+    ft[i]=t[i]**2-5*t[i]+12
+matplotlib.pyplot.plot(t,ft,color=(0,0.8,0.6))
+t1=numpy.array([0]*100)
+matplotlib.pyplot.fill(t,ft,color=(0,0.5,0.6))
+
 matplotlib.pyplot.show()
